@@ -23,6 +23,7 @@ type ContextValue = {
   value: OnlyDateUnits;
   max: Date;
   min: Date;
+  useBuddhistEra: boolean;
 };
 
 type ControlPickersMap = {
@@ -39,6 +40,7 @@ type DatePickerValueProviderProps = PropsWithChildren<{
   minDate?: OnlyDateFormat;
   maxDate?: OnlyDateFormat;
   onDateChanged: (event: {date: OnlyDateFormat}) => void;
+  useBuddhistEra?: boolean;
 }>;
 
 const DatePickerValueProvider = ({
@@ -46,6 +48,7 @@ const DatePickerValueProvider = ({
   maxDate,
   minDate,
   onDateChanged,
+  useBuddhistEra = false,
   children,
 }: DatePickerValueProviderProps) => {
   const {min, max} = useMemo(() => {
@@ -105,8 +108,9 @@ const DatePickerValueProvider = ({
       ),
       max,
       min,
+      useBuddhistEra,
     }),
-    [pickerControl, date, max, min],
+    [pickerControl, date, max, min, useBuddhistEra],
   );
 
   return (

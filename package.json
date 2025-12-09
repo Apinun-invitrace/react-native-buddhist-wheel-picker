@@ -1,7 +1,7 @@
 {
-  "name": "@quidone/react-native-wheel-picker",
-  "version": "1.6.1",
-  "description": "Picker is a UI component for selecting an item from a list of options.",
+  "name": "@apinun/react-native-buddhist-wheel-picker",
+  "version": "1.0.0",
+  "description": "React Native Wheel Picker with Buddhist Era (B.E.) date support",
   "main": "dest/commonjs/index",
   "module": "dest/module/index",
   "types": "dest/typescript/index.d.ts",
@@ -28,7 +28,7 @@
   ],
   "scripts": {
     "test:run": "jest",
-    "tsc:check": "tsc --noEmit",
+    "tsc:check": "tsc --noEmit --project tsconfig.build.json",
     "lint:check": "eslint \"**/*.{js,ts,tsx}\"",
     "lint:fix": "eslint --fix \"**/*.{js,ts,tsx}\"",
     "build:check-all": "yarn lint:fix && yarn tsc:check && yarn test:run",
@@ -68,7 +68,8 @@
   },
   "dependencies": {
     "@rozhkov/react-useful-hooks": "^1.0.10",
-    "date-fns": "^4.1.0"
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",

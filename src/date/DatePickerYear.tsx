@@ -5,11 +5,12 @@ import {useOverlayItemStyle} from './useOverlayItemStyle';
 import {useDatePickerLocale} from './DatePickerLocaleProvider';
 import {withCommonProps} from './DatePickerCommonPropsProvider';
 import {withPickerControl} from '@implementation/picker-control';
+import {toBuddhistYear} from './buddhistEra';
 
 const HocPicker = withCommonProps(withPickerControl(Picker));
 
 export type DatePickerYearProps = Omit<
-  PickerProps<{value: number}>,
+  PickerProps<{value: number; label?: string}>,
   'value' | 'data'
 >;
 
@@ -21,13 +22,27 @@ const DatePickerYear = ({
   const localeData = useDatePickerLocale();
   const dateContext = useDateContext();
   const value = dateContext.value;
+  const useBuddhistEra = dateContext.useBuddhistEra;
   const data = useMemo(() => {
     const startYear = dateContext.min.getFullYear();
     const endYear = dateContext.max.getFullYear();
-    return Array.from({length: endYear - startYear + 1}, (_, index) => ({
-      value: startYear + index,
-    }));
-  }, [dateContext.max, dateContext.min]);
+
+    return Array.from({length: endYear - startYear + 1}, (_, index) => {
+      const adYear = startYear + index;
+
+      if (useBuddhistEra) {
+        const beYear = toBuddhistYear(adYear);
+        return {
+          value: adYear,
+          label: beYear.toString(),
+        };
+      }
+
+      return {
+        value: adYear,
+      };
+    });
+  }, [dateContext.max, dateContext.min, useBuddhistEra]);
 
   const overlayItemStyle = useOverlayItemStyle({
     curUnit: 'year',

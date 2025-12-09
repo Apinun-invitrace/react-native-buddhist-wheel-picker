@@ -15,6 +15,7 @@ type DatePickerProps = {
   minDate?: OnlyDateFormat;
   maxDate?: OnlyDateFormat;
   locale?: string;
+  useBuddhistEra?: boolean;
 
   renderDate?: () => ReactNode;
   renderMonth?: () => ReactNode;
@@ -42,6 +43,7 @@ const DatePickerComponent = ({
   minDate,
   maxDate,
   locale,
+  useBuddhistEra = false,
   renderDate,
   renderMonth,
   renderYear,
@@ -66,6 +68,7 @@ DatePickerProps) => {
         onDateChanged={onDateChanged}
         minDate={minDate}
         maxDate={maxDate}
+        useBuddhistEra={useBuddhistEra}
       >
         <DatePickerCommonPropsProvider
           itemHeight={itemHeight}
