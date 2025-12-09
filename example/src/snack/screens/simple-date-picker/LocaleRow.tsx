@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {ButtonGroup} from 'react-native-elements';
 
 export const LOCALE_DEFAULT = 'en';
-const locales = ['en', 'de', 'ko'];
+const locales = ['en', 'de', 'ko', 'th'];
 
 type LocaleRowProps = {
   selected: string;

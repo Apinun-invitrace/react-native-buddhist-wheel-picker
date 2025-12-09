@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View} from 'react-native';
+import {Alert, Switch, Text, View} from 'react-native';
 import {DatePicker} from '@quidone/react-native-wheel-picker';
 import {useStableCallback} from '@rozhkov/react-useful-hooks';
 import {Button} from 'react-native-elements';
@@ -32,9 +32,10 @@ const ExampleDatePicker = withPropsChanger(DatePicker);
 const SimpleDatePickerScreen = () => {
   const [date, setDate] = useState('2025-02-02');
   const [locale, setLocale] = useState(LOCALE_DEFAULT);
-
+  const [useBuddhistEra, setUseBuddhistEra] = useState(false);
   const onDateChanged = useStableCallback(({date}: {date: string}) => {
     setDate(date);
+    Alert.alert('Date changed', date);
   });
 
   return (
@@ -47,6 +48,7 @@ const SimpleDatePickerScreen = () => {
             onDateChanged={onDateChanged}
             locale={locale}
             minDate={'2000-01-05'}
+            useBuddhistEra={useBuddhistEra}
           />
           <Text>value: "{date}"</Text>
           <View style={{flexDirection: 'row'}}>
@@ -68,6 +70,11 @@ const SimpleDatePickerScreen = () => {
           </View>
         </View>
         <LocaleRow selected={locale} onChange={setLocale} />
+        {/* TODO: Add Switch to toggle Buddhist Era */}
+        <View style={{flexDirection: 'row', alignItems: 'center', gap: 8}}>
+          <Text>Use Buddhist Era</Text>
+          <Switch value={useBuddhistEra} onValueChange={setUseBuddhistEra} />
+        </View>
         <PickerPropsChangerPanel
           style={{paddingTop: 0}}
           hideVirtualized={true}
