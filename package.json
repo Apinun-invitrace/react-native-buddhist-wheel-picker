@@ -1,5 +1,5 @@
 {
-  "name": "@apinun/react-native-buddhist-wheel-picker",
+  "name": "@apinuninvitracehealth/react-native-buddhist-wheel-picker",
   "version": "1.0.0",
   "description": "React Native Wheel Picker with Buddhist Era (B.E.) date support",
   "main": "dest/commonjs/index",
@@ -50,15 +50,23 @@
     "ios",
     "android",
     "select",
-    "field"
+    "field",
+    "buddhist-era",
+    "buddhist",
+    "b.e.",
+    "thai-calendar",
+    "buddhist-calendar"
   ],
-  "repository": "https://github.com/quidone/react-native-wheel-picker",
-  "author": "Sergey Rozhkov <rozhkovse1@gmail.com> (https://github.com/quidone/react-native-wheel-picker)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Apinun-invitrace/react-native-buddhist-wheel-picker.git"
+  },
+  "author": "Apinun <apinun.s@invitracehealth.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/quidone/react-native-wheel-picker/issues"
+    "url": "https://github.com/Apinun-invitrace/react-native-buddhist-wheel-picker/issues"
   },
-  "homepage": "https://github.com/quidone/react-native-wheel-picker#readme",
+  "homepage": "https://github.com/Apinun-invitrace/react-native-buddhist-wheel-picker#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

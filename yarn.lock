@@ -15,9 +15,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apinun/react-native-buddhist-wheel-picker@workspace:.":
+"@apinuninvitracehealth/react-native-buddhist-wheel-picker@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@apinun/react-native-buddhist-wheel-picker@workspace:."
+  resolution: "@apinuninvitracehealth/react-native-buddhist-wheel-picker@workspace:."
   dependencies:
     "@babel/cli": "npm:^7.21.5"
     "@babel/core": "npm:^7.26.0"
